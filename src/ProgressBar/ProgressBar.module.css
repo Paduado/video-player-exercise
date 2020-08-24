@@ -1,0 +1,39 @@
+.container {
+  --bar-height: 8px;
+  --thumb-size: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: calc(var(--thumb-size) / 2 - var(--bar-height) / 2)
+    calc(var(--thumb-size) / 2);
+}
+
+.bar {
+  height: var(--bar-height);
+  background-color: #555;
+  position: relative;
+  width: 100%;
+}
+
+.fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  pointer-events: none;
+  transform-origin: left;
+}
+
+.thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%) translateY(calc(-50% + var(--bar-height) / 2));
+  pointer-events: none;
+}
